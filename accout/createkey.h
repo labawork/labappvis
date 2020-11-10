@@ -2,7 +2,7 @@
 #include"user.h"
 class key
 {
-	int key[5];
+public:
 	void createskey();
 };
 

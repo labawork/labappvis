@@ -2,8 +2,9 @@
 class user
 {
 public:
-	int numberuser[6];
+	int numberuser;
 	int password[5];
-	int data[20];
+	int data;
+	void database();
 };
 

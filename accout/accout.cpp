@@ -5,9 +5,6 @@
 #include "operation.h"
 #include"interface.h"
 #include"user.h"
-
-
-
 #include <iostream>
 
 int main(int argc, char* args[])

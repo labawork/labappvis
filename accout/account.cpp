@@ -31,4 +31,3 @@ void depozit()
 	cout << endl;
 
 }
-void()

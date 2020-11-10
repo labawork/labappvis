@@ -2,8 +2,7 @@
 #include"user.h"
 class decrypt
 {
-	int data[20];
-	int key;
+public:
 	void decrypt1();
 	void readdata();
 };

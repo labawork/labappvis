@@ -1,4 +1,4 @@
-﻿  account.cpp
-C:\Users\Дарья\Desktop\ppvis\laba3\accout\account.cpp(34,6): error C2059: синтаксическая ошибка: )
-  accout.cpp
-  Создание кода...
+﻿  user.cpp
+C:\Users\Дарья\Desktop\ppvis\laba3\accout\user.cpp(6,7): warning C4101: dasha: неиспользованная локальная переменная
+accout.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall account::enter(void)" (?enter@account@@QAEXXZ) в функции _main.
+C:\Users\Дарья\Desktop\ppvis\laba3\accout\Debug\accout.exe : fatal error LNK1120: неразрешенных внешних элементов: 1

@@ -2,8 +2,7 @@
 #include"user.h"
 class encrypt
 {
-	int key[5];
-	int data[20];
+public:
 	void loaddata();
 	void showdata();
 };
