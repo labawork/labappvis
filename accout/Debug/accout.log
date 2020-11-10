@@ -1,0 +1,5 @@
+﻿  account.cpp
+C:\Users\Дарья\Desktop\ppvis\laba3\accout\account.h(7,13): error C3646: name: неизвестный спецификатор переопределения
+C:\Users\Дарья\Desktop\ppvis\laba3\accout\account.h(7,13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  accout.cpp
+  Создание кода...
