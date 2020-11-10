@@ -3,6 +3,6 @@
 class key
 {
 public:
-	void createskey();
+	void createskey(user);
 };
 

@@ -11,6 +11,7 @@ void datebase()
 	{
 		dasha.password[i] = 0;
 	}
+	
 
 
 }
