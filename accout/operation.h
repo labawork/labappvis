@@ -2,6 +2,7 @@
 #include"user.h"
 class operation
 {
-	void chooseoperaton();
+	void addmoneytodepozit();
+	void printbalance();
 };
 
