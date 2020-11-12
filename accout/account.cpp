@@ -4,11 +4,12 @@
 #include"user.cpp"
 #include<fstream>
 
+
 using namespace std;
 void enter()
 {
 
-	user person1;
+	account person1;
 
 	cout << "write your login" << endl;
 		cin >> person1.numberuser;
@@ -22,6 +23,7 @@ void enter()
 		
 	}
 	cout << endl;
+	void createskey();
 	ofstream fin;
 	fin.open("person.txt", ofstream::app|ofstream::binary);
 	if (!fin.is_open())
@@ -30,18 +32,11 @@ void enter()
 	}
 	else
 	{
-		fin.write((char*)&user, sizeof(person1));
+		fin.write((char*)&person1, sizeof(account));
 	}	
 	fin.close();
 	
 	
 }
-void depozit()
-{
-	user person1;
-	cout << "Put money into your acc" << endl;
-		cin >> person1.data;
-	
-	cout << endl;
 
-}
+

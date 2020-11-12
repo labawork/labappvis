@@ -11,7 +11,5 @@ int main(int argc, char* args[])
 {
 	account a;
 	a.enter();
-	user dasha;
-	dasha.database();
 
 }

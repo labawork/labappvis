@@ -4,7 +4,9 @@
 class account
 {
 public:
+	int numberuser;
+	int password[5];
+	int data;
 	void enter();
-	void depozit();
 };
 

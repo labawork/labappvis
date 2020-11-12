@@ -141,18 +141,14 @@
   <ItemGroup>
     <ClCompile Include="account.cpp" />
     <ClCompile Include="accout.cpp" />
-    <ClCompile Include="createkey.cpp" />
     <ClCompile Include="decrypt.cpp" />
-    <ClCompile Include="encrypt.cpp" />
     <ClCompile Include="interface.cpp" />
     <ClCompile Include="operation.cpp" />
     <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h" />
-    <ClInclude Include="createkey.h" />
     <ClInclude Include="decrypt.h" />
-    <ClInclude Include="encrypt.h" />
     <ClInclude Include="interface.h" />
     <ClInclude Include="operation.h" />
     <ClInclude Include="user.h" />
