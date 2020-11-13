@@ -1,14 +1,15 @@
 #include"decrypt.h"
 #include<iostream>
 #include<fstream>
-#include"user.h"
 using namespace std;
-void decrypt1()
+
+void decrypt::decrypt1()
 {
 	decrypt person;
 	ifstream fin;
 	int number;
-	cout << "write the number of deposit" << endl;
+	int k = 0;
+	cout << "Write the number of deposit" << endl;
 	cin >> number;
 	fin.open("person.txt", ofstream::app | ofstream::binary);
 	if (!fin.is_open())
@@ -22,8 +23,10 @@ void decrypt1()
 			if (person.numberuser == number)
 			{
 				cout << "You have a depozit" << endl;
+				k++;
 			}
 		}
+		if (k == 0) cout << "You dont have a depozit" << endl;
 	}
 	fin.close();
 
