@@ -1,8 +1,7 @@
 #pragma once
 #include"user.h"
-class interface
+class interface:public user
 {
 public:
 	void show();
-	void chooseoperations();
 };
