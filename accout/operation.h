@@ -1,9 +1,9 @@
 #pragma once
 #include"user.h"
-class operation
+class operation:public user
 {
 public:
-	void addmoneytodepozit();
+	void addordeletemoneytofromdepozit();
 	void printbalance();
 };
 
