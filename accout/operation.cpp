@@ -1,4 +1,95 @@
 #include "operation.h"
 #include<iostream>
+#include<fstream>
 using namespace std;
-//тут нужно делать операции снятия денег и пополения счёта(в каестве примера можешь использовтаь лабу 2 просутудентов, там есть как редактировать,или можешь оставить мне)
+
+void operation::addordeletemoneytofromdepozit()
+{
+	user person;
+	int number;
+	cout << "Enter your login"<<endl;
+	cin >> number;
+	
+	ifstream fin1("person.txt", ios::binary);
+	ofstream fout1("Vremenaya.txt", ios::binary);
+	while (!fin1.eof())
+	{
+		fin1.read((char*)&person, sizeof(user));
+		if (number != person.numberuser and !fin1.eof())
+		{
+			fout1.write((char*)&person, sizeof(user));
+		}
+		if (number == person.numberuser and !fin1.eof())
+		{
+			int i;
+			cout << "What would you like to do?(1-take money,2-put money) " << endl;
+			cin >> i;
+			int k = 0;
+			int templmoney;
+			if (i == 1)
+			{
+				templmoney = person.data;
+
+				cout << "How much money would you like to take?" << endl;
+				cin >> k;
+				person.data = templmoney - k;
+				
+			}
+			if (i == 2)
+			{
+				templmoney = person.data;
+				cout << "How much money would you like to put?" << endl;
+				cin >> k;
+				person.data = templmoney + k;
+			}
+      
+			fout1.write((char*)&person, sizeof(user));
+		}
+	}
+	fin1.close();
+	fout1.close();
+	ifstream fin("Vremenaya.txt", ios::binary);
+	ofstream fout("person.txt", ios::binary);
+	while (!fin.eof())
+	{
+		fin.read((char*)&person, sizeof(user));
+		if (!fin.eof())
+		{
+			fout.write((char*)&person, sizeof(user));
+		}
+	}
+	fin.close();
+	fout.close(); 
+
+}
+
+void operation::printbalance()
+{
+	user person;
+	int number;
+	cout << "Enter your login" << endl;
+	cin >> number;
+	
+
+	ifstream finn;
+
+	finn.open("person.txt", ofstream::app | ofstream::binary);
+	if (!finn.is_open())
+	{
+		cout << "error" << endl;
+	}
+	else
+	{
+		while (finn.read((char*)&person, sizeof(user)))
+		{
+			if (person.numberuser == number)
+			{
+				cout << "User Number is " << person.numberuser << endl;
+				cout << "Your balance is " << person.data << endl;
+			}
+		}
+
+	}
+	finn.close();
+}
+
