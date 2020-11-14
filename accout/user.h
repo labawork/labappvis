@@ -1,10 +1,10 @@
 #pragma once
-class user
+class user               //класс с данными пользователя
 {
 public:
-	int numberuser;
-	int password;
-	int data;
-	void database();
+	int numberuser;  //логин пользователя      
+	int password;    //пароль пользователя
+	int data;        //количество денег депозита пользователя
+	void database(); //метод для записи логина пользователя в текстовый документ
 };
 
