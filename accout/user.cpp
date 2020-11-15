@@ -7,7 +7,7 @@ void user::database()
 	user person;
 	ifstream fin;
 	int number;
-        fin.exceptions(ifstream::badbit | ifstream::failbit);
+        //fin.exceptions(ifstream::badbit | ifstream::failbit);
 	try
 	{
 		fin.open("person.txt", ofstream::app | ofstream::binary);
@@ -24,9 +24,17 @@ void user::database()
 	}
 	else
 	{
+		try
+		{
 		while (fin.read((char*)&person, sizeof(user)))
 		{
 			cout << "User Number is " << person.numberuser << endl;
+		}
+		}
+		catch (const std::exception& ex)
+		{
+			cout << ex.what() << endl;
+			cout << "Error" << endl;
 		}
 
 	}
