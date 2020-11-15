@@ -9,7 +9,17 @@ void interface::show()
 	user person1;
 	cout << "All information (admin access only)" << endl;
 	ifstream fin;
-	fin.open("person.txt", ofstream::app | ofstream::binary);
+        fin.exceptions(ifstream::badbit | ifstream::failbit);
+	try
+	{
+		fin.open("person.txt", ofstream::app | ofstream::binary);
+
+	}
+	catch (const std::exception& ex)
+	{
+		cout << ex.what() << endl;
+		cout << "Error" << endl;
+	}
 	if (!fin.is_open())
 	{
 		cout << "error" << endl;
