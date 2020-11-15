@@ -11,12 +11,14 @@ void operation::addordeletemoneytofromdepozit()
 	cin >> number;
 	
 	ifstream fin1("person.txt", ios::binary);
-	fin1.exceptions(ifstream::badbit | ifstream::failbit);
+	//fin1.exceptions(ifstream::badbit | ifstream::failbit);
 	ofstream fout1("Vremenaya.txt", ios::binary);
-	fout1.exceptions(ofstream::badbit | ofstream::failbit);
+	//fout1.exceptions(ofstream::badbit | ofstream::failbit);
 
 	while (!fin1.eof())
 	{
+		try
+		{
 		fin1.read((char*)&person, sizeof(user));
 		if (number != person.numberuser and !fin1.eof())
 		{
@@ -48,6 +50,12 @@ void operation::addordeletemoneytofromdepozit()
       
 			fout1.write((char*)&person, sizeof(user));
 		}
+		}
+		catch (const std::exception& ex)
+		{
+			cout << ex.what() << endl;
+			cout << "Error" << endl;
+		}
 	}
 	fin1.close();
 	fout1.close();
@@ -55,10 +63,18 @@ void operation::addordeletemoneytofromdepozit()
 	ofstream fout("person.txt", ios::binary);
 	while (!fin.eof())
 	{
+		try
+		{
 		fin.read((char*)&person, sizeof(user));
 		if (!fin.eof())
 		{
 			fout.write((char*)&person, sizeof(user));
+		}
+		}
+		catch (const std::exception&ex)
+		{
+			cout << ex.what() << endl;
+			cout << "Error" << endl;
 		}
 	}
 	fin.close();
@@ -75,7 +91,7 @@ void operation::printbalance()
 	
 
 	ifstream finn;
-        finn.exceptions(ifstream::badbit | ifstream::failbit);
+        //finn.exceptions(ifstream::badbit | ifstream::failbit);
 	
 	try
 	{
@@ -93,6 +109,8 @@ void operation::printbalance()
 	}
 	else
 	{
+		try
+		{
 		while (finn.read((char*)&person, sizeof(user)))
 		{
 			if (person.numberuser == number)
@@ -100,6 +118,12 @@ void operation::printbalance()
 				cout << "User Number is " << person.numberuser << endl;
 				cout << "Your balance is " << person.data << endl;
 			}
+		}
+		}
+		catch (const std::exception& ex)
+		{
+			cout << ex.what() << endl;
+			cout << "Error" << endl;
 		}
 
 	}
