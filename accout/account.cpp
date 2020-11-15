@@ -22,7 +22,17 @@ void account::enter()
 
 	cout << endl;
 	ofstream fin;
-	fin.open("person.txt", ofstream::app | ofstream::binary);
+	fin.exceptions(ofstream::badbit | ofstream::failbit);
+	try
+	{
+		fin.open("person.txt", ofstream::app | ofstream::binary);
+		
+	}
+	catch (const std::exception& ex)
+	{
+		cout << ex.what() << endl;
+		cout << "Error" << endl;
+	}
 	if (!fin.is_open())
 	{
 		cout << "error" << endl;
