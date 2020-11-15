@@ -7,7 +7,7 @@ void decrypt::decrypt1()
 {
 	decrypt person;
 	ifstream fin;
-	fin.exceptions(ofstream::badbit | ofstream::failbit);
+	//fin.exceptions(ofstream::badbit | ofstream::failbit);
 	try
 	{
 		fin.open("person.txt", ofstream::app | ofstream::binary);
@@ -37,6 +37,11 @@ void decrypt::decrypt1()
 			}
 		}
 		if (k == 0) cout << "You dont have a depozit" << endl;
+		catch (const std::exception& ex)
+		{
+			cout << ex.what() << endl;
+			cout << "Error" << endl;
+		}
 	}
 	fin.close();
 
