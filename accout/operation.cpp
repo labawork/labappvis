@@ -11,7 +11,10 @@ void operation::addordeletemoneytofromdepozit()
 	cin >> number;
 	
 	ifstream fin1("person.txt", ios::binary);
+	fin1.exceptions(ifstream::badbit | ifstream::failbit);
 	ofstream fout1("Vremenaya.txt", ios::binary);
+	fout1.exceptions(ofstream::badbit | ofstream::failbit);
+
 	while (!fin1.eof())
 	{
 		fin1.read((char*)&person, sizeof(user));
@@ -72,8 +75,18 @@ void operation::printbalance()
 	
 
 	ifstream finn;
+        finn.exceptions(ifstream::badbit | ifstream::failbit);
+	
+	try
+	{
+		finn.open("person.txt", ofstream::app | ofstream::binary);
 
-	finn.open("person.txt", ofstream::app | ofstream::binary);
+	}
+	catch (const std::exception& ex)
+	{
+		cout << ex.what() << endl;
+		cout << "Error" << endl;
+	}
 	if (!finn.is_open())
 	{
 		cout << "error" << endl;
