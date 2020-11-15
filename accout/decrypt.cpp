@@ -28,15 +28,18 @@ void decrypt::decrypt1()
 	}
 	else
 	{
-		while (fin.read((char*)&person, sizeof(decrypt)))
+		try
 		{
-			if (person.numberuser == number)
+			while (fin.read((char*)&person, sizeof(decrypt)))
 			{
-				cout << "You have a depozit" << endl;
-				k++;
+				if (person.numberuser == number)
+				{
+					cout << "You have a depozit" << endl;
+					k++;
+				}
 			}
+			if (k == 0) cout << "You dont have a depozit" << endl;
 		}
-		if (k == 0) cout << "You dont have a depozit" << endl;
 		catch (const std::exception& ex)
 		{
 			cout << ex.what() << endl;
