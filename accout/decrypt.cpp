@@ -7,11 +7,21 @@ void decrypt::decrypt1()
 {
 	decrypt person;
 	ifstream fin;
+	fin.exceptions(ofstream::badbit | ofstream::failbit);
+	try
+	{
+		fin.open("person.txt", ofstream::app | ofstream::binary);
+
+	}
+	catch (const std::exception& ex)
+	{
+		cout << ex.what() << endl;
+		cout << "Error" << endl;
+	}
 	int number;
 	int k = 0;
 	cout << "Write the number of deposit" << endl;
 	cin >> number;
-	fin.open("person.txt", ofstream::app | ofstream::binary);
 	if (!fin.is_open())
 	{
 		cout << "error" << endl;
